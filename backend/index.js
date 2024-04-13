@@ -14,8 +14,9 @@ const BASE_URL = 'https://pixabay.com/api/';
 app.get('/images/:category', async (req, res) => {
     const { category } = req.params;
     const { page = 1 } = req.query;
+    const pageNumber = Number(page);
 
-    const url = `${BASE_URL}?key=${API_KEY}&q=${category}&page=${page}&per_page=9`;
+    const url = `${BASE_URL}?key=${API_KEY}&q=${category}&page=${pageNumber}&per_page=9`;
 
 
     try {
